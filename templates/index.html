@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Library</title>
+</head>
+<body>
+<h1>My Library</h1>
+
+    <ul>
+        {% if check: %}
+            <li>{{message}}</li>
+
+        {% else: %}
+            {% for pair in message: %}
+            {% set number=pair['id'] %}
+            <li>{{pair['title']}} - {{pair['author']}} - {{pair['rating']}}/10<a href="{{url_for('edit', number=number)}}"> Edit Rating</a></li>
+            {% endfor %}
+        {% endif %}
+    </ul>
+    
+<a href="{{url_for('add')}}">Add New Book</a>
+
+{{success}}
+</body>
+</html>

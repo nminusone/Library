@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+{{number}}<br>
+
+Book Name: {{record['title']}}<br>
+Current Rating:{{record['rating']}}<br>
+
+    <form action="{{url_for('update', number=number)}}" method="post">
+        <input type="text" name="new_rating" value="New Rating">
+        <button type="submit">Change Rating</button>
+
+    </form>
+
+</body>
+</html>
